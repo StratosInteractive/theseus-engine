@@ -1628,7 +1628,7 @@ def to_raw_cstring(value: Union[str, List[str]]) -> str:
     offset = 0
     encoded = value.encode()
 
-    while offset <= len(encoded):
+    while offset < len(encoded):
         segment = encoded[offset : offset + MAX_LITERAL]
         offset += MAX_LITERAL
         if len(segment) == MAX_LITERAL:
